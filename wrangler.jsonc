@@ -1,0 +1,28 @@
+{
+  // Cloudflare Worker 部署配置
+  // 这个文件存在，Cloudflare 自动构建里的 `npx wrangler deploy` 才能找到要部署的东西
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "test",
+  "main": "src/index.js",
+  "compatibility_date": "2025-06-01",
+
+  // 静态文件目录（网页本身）
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+
+  // Workers AI 绑定：有了它，代码里直接 env.AI.run(...)，不用任何 API Key
+  "ai": {
+    "binding": "AI"
+  },
+
+  // 想换模型改这里，或者在 Cloudflare 后台的变量里覆盖
+  "vars": {
+    "MODEL": "@cf/meta/llama-3.1-8b-instruct"
+  },
+
+  "observability": {
+    "enabled": true
+  }
+}

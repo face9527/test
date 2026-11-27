@@ -1,0 +1,11 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "private": true,
+  "description": "一个跑在 Cloudflare Workers 上的极简 AI 聊天应用（用 Workers AI 免费额度，无需 API Key）",
+  "type": "module",
+  "scripts": {
+    "dev": "npx wrangler dev",
+    "deploy": "npx wrangler deploy"
+  }
+}
